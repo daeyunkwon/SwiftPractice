@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         return stack
     }()
     
-    private let rectHeight: CGFloat = 200
+    private lazy var rectHeight: CGFloat = 200
     private let numberOfRects = 20
 
     override func viewDidLoad() {
@@ -44,6 +44,8 @@ class ViewController: UIViewController {
         
         scrollView.backgroundColor = .systemYellow
         scrollView.delegate = self
+        scrollView.isPagingEnabled = true
+        scrollView.contentInsetAdjustmentBehavior = .never
     }
     
     private func createRectangle() -> UIView {
